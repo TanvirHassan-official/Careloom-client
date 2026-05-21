@@ -1,7 +1,16 @@
+
+
+
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  /* config options here */
-  reactCompiler: true,
+    reactCompiler: true,
+    images: {
+        remotePatterns: [
+            { hostname: "i.pravatar.cc" },
+            { hostname: "i.ibb.co" }, // for your real doctor images later
+        ],
+    },
 };
 
 export default nextConfig;
