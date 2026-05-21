@@ -40,7 +40,7 @@ export default function Banner() {
                             <h1 className="text-5xl sm:text-6xl font-black text-white leading-tight">
                                 Find &amp; Book{" "}
                                 <span className="relative inline-block">
-                                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-300 to-purple-200">
+                                    <span className="text-transparent bg-clip-text bg-linear-to-r from-violet-300 to-purple-200">
                                         Top Doctors
                                     </span>
                                     <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 200 8" fill="none">
