@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faStar, faLocationDot, faClock, faStethoscope } from "@fortawesome/free-solid-svg-icons";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faStar, faLocationDot, faClock, faStethoscope } from "@fortawesome/free-solid-svg-icons";
 
 const DoctorCard = ({ doctor }) => {
     return (
@@ -33,14 +33,14 @@ const DoctorCard = ({ doctor }) => {
                         </h2>
                         {/* Rating pill */}
                         <div className="flex items-center gap-1 bg-[#EDE9FE] px-2 py-0.5 rounded-full shrink-0">
-                            <FontAwesomeIcon icon={faStar} className="text-[#7C3AED]" width={10} />
+                            {/* <FontAwesomeIcon icon={faStar} className="text-[#7C3AED]" width={10} /> */}
                             <span className="text-xs font-bold text-[#7C3AED]">{doctor.rating}</span>
                         </div>
                     </div>
 
                     {/* Specialty */}
                     <div className="flex items-center gap-1.5">
-                        <FontAwesomeIcon icon={faStethoscope} className="text-[#7C3AED]" width={12} />
+                        {/* <FontAwesomeIcon icon={faStethoscope} className="text-[#7C3AED]" width={12} /> */}
                         <span className="text-sm font-semibold text-[#7C3AED]">{doctor.specialty}</span>
                     </div>
 
@@ -49,7 +49,7 @@ const DoctorCard = ({ doctor }) => {
 
                     {/* Location */}
                     <div className="flex items-center gap-1">
-                        <FontAwesomeIcon icon={faLocationDot} className="text-[#78716C]" width={10} />
+                        {/* <FontAwesomeIcon icon={faLocationDot} className="text-[#78716C]" width={10} /> */}
                         <span className="text-xs text-[#78716C]">{doctor.location}</span>
                     </div>
                 </div>
@@ -72,7 +72,7 @@ const DoctorCard = ({ doctor }) => {
 
             {/* Availability */}
             <div className="px-5 py-3 flex items-start gap-2">
-                <FontAwesomeIcon icon={faClock} className="text-[#7C3AED] mt-0.5 shrink-0" width={12} />
+                {/* <FontAwesomeIcon icon={faClock} className="text-[#7C3AED] mt-0.5 shrink-0" width={12} /> */}
                 <div className="flex flex-wrap gap-1">
                     {doctor.availability.map((slot, i) => (
                         <span

@@ -14,9 +14,9 @@ const Avatar = () => {
         .slice(0, 2);
         
     return (
-        <Link href="/profile">
+        <Link href="/dashboard">
             <div className="avatar cursor-pointer">
-                <div className="w-9 rounded-full ring ring-[#386FA4] ring-offset-1 ring-offset-white hover:ring-[#133C55] transition-all duration-300">
+                <div className="w-9 rounded-full ring ring-[#4C1D95] ring-offset-1 ring-offset-white hover:ring-[#133C55] transition-all duration-300">
                     {user?.image ? (
                         <img
                             src={user.image}

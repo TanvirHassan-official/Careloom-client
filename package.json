@@ -13,6 +13,8 @@
     "@fortawesome/fontawesome-svg-core": "^7.2.0",
     "@fortawesome/free-solid-svg-icons": "^7.2.0",
     "@fortawesome/react-fontawesome": "github:fortawesome/react-fontawesome",
+    "@heroui/react": "^3.0.5",
+    "@heroui/styles": "^3.0.5",
     "better-auth": "^1.6.11",
     "fortawesome": "^0.0.1-security",
     "mongodb": "^7.2.0",

@@ -1,6 +1,6 @@
 'use client';
 import Banner from "@/components/Banner";
-import { useEffect, useState } from "react";
+import Category from "@/components/Category";
 
 export default function Home() {
   // const [doctors, setDoctors] = useState([]);
@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <div>
       <Banner/>
-
+      <Category/>
     </div>
   );
 }

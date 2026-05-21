@@ -8,9 +8,11 @@ const nextConfig = {
     images: {
         remotePatterns: [
             { hostname: "i.pravatar.cc" },
+            { hostname: "randomuser.me" },
             { hostname: "i.ibb.co" }, // for your real doctor images later
         ],
     },
+
 };
 
 export default nextConfig;

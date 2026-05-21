@@ -21,8 +21,8 @@ export default function Banner() {
             />
 
             {/* Glow blobs */}
-            <div className="absolute top-[-80px] left-[-80px] w-[400px] h-[400px] bg-[#7C3AED] rounded-full blur-[120px] opacity-40" />
-            <div className="absolute bottom-[-60px] right-[-60px] w-[350px] h-[350px] bg-[#5B21B6] rounded-full blur-[100px] opacity-30" />
+            <div className="absolute -top-20 -left-20 w-100 h-100 bg-[#7C3AED] rounded-full blur-[120px] opacity-40" />
+            <div className="absolute -bottom-15 -right-15 w-87.5 h-87.5 bg-[#5B21B6] rounded-full blur-[100px] opacity-30" />
 
             <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 py-20 w-full">
                 <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -108,7 +108,7 @@ export default function Banner() {
                                 fill
                                 className="object-cover"
                             />
-                            <div className="absolute inset-0 bg-gradient-to-t from-[#4C1D95]/80 via-transparent to-transparent" />
+                            <div className="absolute inset-0 bg-linear-to-t from-[#4C1D95]/80 via-transparent to-transparent" />
                             <div className="absolute bottom-0 left-0 right-0 p-5">
                                 <p className="text-white font-bold text-lg">Dr. Ayesha Rahman</p>
                                 <p className="text-violet-200 text-sm">Cardiologist • 10 yrs exp</p>
