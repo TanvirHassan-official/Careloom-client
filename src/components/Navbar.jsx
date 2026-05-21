@@ -136,7 +136,7 @@ export default function Navbar() {
                                 </button>
                             </Link>
                             <Link href="/signup" onClick={() => setOpen(false)}>
-                                <button className="w-full px-4 py-2.5 rounded-xl font-semibold text-sm bg-white text-[#4C1D95] hover:bg-violet-100 transition-all duration-300 font-bold">
+                                <button className="w-full px-4 py-2.5 rounded-xl font-semibold text-sm bg-white text-[#4C1D95] hover:bg-violet-100 transition-all duration-300 ">
                                     Get Started →
                                 </button>
                             </Link>

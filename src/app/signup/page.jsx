@@ -3,7 +3,7 @@ import { useState } from "react";
 import { authClient } from "@/lib/auth-client";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import GoogleLogin from "@/Components/GoogleLogin";
+import GoogleLogin from "@/components/GoogleLogin";
 import { toast } from "react-toastify";
 
 export default function SignUpPage() {
