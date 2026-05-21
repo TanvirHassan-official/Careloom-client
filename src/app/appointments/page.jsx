@@ -58,13 +58,6 @@ export default function AppointmentsPage() {
       );
     }
 
-    // filter by specialty
-    if (selectedSpecialty) {
-      result = result.filter((doc) =>
-        doc.specialty.toLowerCase() === selectedSpecialty.toLowerCase()
-      );
-    }
-
     // sort
     if (sortBy === "rating") {
       result.sort((a, b) => b.rating - a.rating);
@@ -118,22 +111,6 @@ export default function AppointmentsPage() {
               />
             </div>
 
-            {/* Specialty Filter */}
-            <div className="relative">
-              <FaFilter className="absolute left-4 top-1/2 -translate-y-1/2 text-[#78716C]" size={12} />
-              <select
-                value={selectedSpecialty}
-                onChange={(e) => setSelectedSpecialty(e.target.value)}
-                className="w-full lg:w-52 pl-10 pr-4 py-2.5 rounded-xl border border-[#E5E7EB] text-sm text-[#1C1917] focus:outline-none focus:border-[#7C3AED] focus:ring-2 focus:ring-[#EDE9FE] transition-all appearance-none bg-white cursor-pointer"
-              >
-                <option value="">All Specialties</option>
-                {specialties.map((spec) => (
-                  <option key={spec} value={spec}>
-                    {spec}
-                  </option>
-                ))}
-              </select>
-            </div>
 
             {/* Sort */}
             <select

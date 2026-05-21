@@ -1,6 +1,11 @@
-'use client';
 import Banner from "@/components/Banner";
 import Category from "@/components/Category";
+import TopRatedDoctors from "@/components/TopRatedDoctors";
+
+export const metadata = {
+  title: "Careloom - Book Top Doctors Near You",
+  description: "Browse verified doctors, check availability, and book appointments in minutes.",
+};
 
 export default function Home() {
   // const [doctors, setDoctors] = useState([]);
@@ -16,6 +21,8 @@ export default function Home() {
     <div>
       <Banner/>
       <Category/>
+      <TopRatedDoctors/>
+  
     </div>
   );
 }

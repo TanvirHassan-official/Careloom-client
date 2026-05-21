@@ -94,7 +94,7 @@ const DoctorCard = ({ doctor }) => {
                     <span className="w-1.5 h-1.5 rounded-full bg-[#059669] inline-block" />
                     Available Today
                 </span>
-                <Link href={`/doctors/${doctor._id}`}>
+                <Link href={`/appointments/${doctor._id}`}>
                     <button className="px-4 py-2 bg-[#7C3AED] hover:bg-[#5B21B6] text-white text-xs font-semibold rounded-xl transition-all duration-300 hover:shadow-md hover:shadow-[#7C3AED]/30">
                         View Details →
                     </button>
