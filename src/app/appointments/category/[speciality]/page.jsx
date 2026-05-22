@@ -1,38 +1,20 @@
-"use client";
+import Specialists from "@/components/clientPages/Specialists";
 
-import { useEffect, useState } from "react";
-import { useParams } from "next/navigation";
-import DoctorCard from "@/components/doctorCard";
+export async function generateMetadata({ params }) {
+  const { speciality } = await params;
 
-export default function CategoryPage() {
-  const params = useParams();
-  const specialty = params?.specialty;
+  return {
+    title: `${speciality} | Careloom`,
+    description: `View appointment details for ${speciality}`,
+  };
+}
 
-  const [doctors, setDoctors] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  const formatted = specialty?.replace(/-/g, " ") || "";
-
-  useEffect(() => {
-    if (!specialty) return;
-
-    fetch(
-      `${process.env.NEXT_PUBLIC_API_URL}/doctors/?specialty=${specialty}`
-    )
-      .then((r) => r.json())
-      .then((d) => {
-        setDoctors(d);
-        setLoading(false);
-      })
-      .catch(() => setLoading(false));
-
-  }, [specialty]);
-
+const page = () => {
   return (
     <div>
-      {doctors.map((doc) => (
-        <DoctorCard key={doc._id} doctor={doc} />
-      ))}
+      <Specialists/>
     </div>
   );
-}
+};
+
+export default page;

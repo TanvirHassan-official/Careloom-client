@@ -1,5 +1,5 @@
 "use client";
-
+import { useRouter } from "next/navigation";
 import { usePathname } from 'next/navigation';
 import { useState } from "react";
 import Link from "next/link";
@@ -18,9 +18,11 @@ const navLinks = [
 export default function Navbar() {
     const userData = authClient.useSession();
     const user = userData.data?.user;
-
+    const router = useRouter();
     const handleSignOut = async () => {
+         router.push("/");
         await authClient.signOut();
+       
     };
 
     const [open, setOpen] = useState(false);

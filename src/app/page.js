@@ -1,5 +1,5 @@
 import Banner from "@/components/Banner";
-import Category from "@/components/Category";
+import Category from "@/app/appointments/category/page";
 import TopRatedDoctors from "@/components/TopRatedDoctors";
 
 export const metadata = {

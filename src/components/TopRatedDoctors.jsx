@@ -21,11 +21,9 @@ export default function TopRatedDoctors() {
   }, []);
  
   const handleViewDetails = (id) => {
-    if (session?.user) {
-      router.push(`/doctors/${id}`);
-    } else {
-      router.push("/signin");
-    }
+
+      router.push(`/appointments/${id}`);
+
   };
  
   return (
