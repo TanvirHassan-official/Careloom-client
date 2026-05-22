@@ -85,6 +85,7 @@ export default function DashboardPage() {
 
     // ── Submit update ──
     const handleUpdate = async (e) => {
+        const { data: tokenData } = await authClient.token()
         e.preventDefault();
         setUpdating(true);
         try {
