@@ -11,7 +11,6 @@ export default function CategoryPage() {
  
   const [doctors, setDoctors] = useState([]);
   const [loading, setLoading] = useState(true);
- 
   // e.g. "general-physician" → "General Physician" for display
   const formatted = speciality
     ? speciality
@@ -27,8 +26,7 @@ export default function CategoryPage() {
  
     // ✅ Fixed: calls /doctors/category/:speciality which exists in index.js
     fetch(
-      `${process.env.NEXT_PUBLIC_API_URL}/doctors/category/${speciality}`
-    )
+      `${process.env.NEXT_PUBLIC_API_URL}/doctors/category/${speciality}}`)
       .then((r) => r.json())
       .then((d) => {
         setDoctors(Array.isArray(d) ? d : []);

@@ -1,10 +1,15 @@
 import DoctorDetailsPage from "@/components/clientPages/Doctors";
+import { authClient } from "@/lib/auth-client";
 
 export async function generateMetadata({ params }) {
   const { id } = await params;
-
+const { data: tokenData } = await authClient.token()
   // example: fetch doctor/appointment info
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/doctors/${id}`);
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/doctors/${id}`,{
+    headers: {
+      authorization: `Bearer ${tokenData}`
+    }
+  });
   const data = await res.json();
 
   return {
