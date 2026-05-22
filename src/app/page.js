@@ -1,7 +1,8 @@
 import Banner from "@/components/Banner";
 import Category from "@/app/appointments/category/page";
 import TopRatedDoctors from "@/components/TopRatedDoctors";
-import Footer from "@/components/Footer";
+import WhyCareloom from "@/components/Why";
+
 
 export const metadata = {
   title: "Careloom - Book Top Doctors Near You",
@@ -21,9 +22,9 @@ export default function Home() {
   return (
     <div>
       <Banner/>
-      <Category/>
       <TopRatedDoctors/>
-      <Footer/>
+      <WhyCareloom/>
+      <Category/>
     </div>
   );
 }

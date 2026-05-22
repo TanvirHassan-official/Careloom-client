@@ -122,8 +122,8 @@ export default function Category() {
       {/* heading */}
       <div className="mb-10">
         <div className="flex items-center gap-2 mb-2">
-          <MdOutlineLocalHospital className="text-[#386FA4]" size={20} />
-          <span className="text-sm font-semibold text-[#386FA4] uppercase tracking-widest">
+          <MdOutlineLocalHospital className="text-[#7c3aed]" size={20} />
+          <span className="text-sm font-semibold text-[#7c3aed] uppercase tracking-widest">
             Browse by Specialty
           </span>
         </div>

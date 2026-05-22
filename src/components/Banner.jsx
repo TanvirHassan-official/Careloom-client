@@ -86,7 +86,8 @@ export default function Banner() {
                                             <Image
                                                 src={`https://i.pravatar.cc/40?img=${id}`}
                                                 alt="patient"
-                                                fill
+                                                width={32}
+                                                height={32}
                                                 className="object-cover"
                                             />
                                         </div>
@@ -105,8 +106,9 @@ export default function Banner() {
                             <Image
                                 src="https://i.pravatar.cc/400?img=47"
                                 alt="Featured Doctor"
-                                fill
-                                className="object-cover"
+                                    fill
+                                    sizes="w-72 h-80"
+                                className="object-cover "
                             />
                             <div className="absolute inset-0 bg-linear-to-t from-[#4C1D95]/80 via-transparent to-transparent" />
                             <div className="absolute bottom-0 left-0 right-0 p-5">
@@ -122,7 +124,8 @@ export default function Banner() {
                                 <Image
                                     src="https://i.pravatar.cc/80?img=53"
                                     alt="Dr. Imran"
-                                    fill
+                                    width={40}
+                                    height={40}
                                     className="object-cover"
                                 />
                             </div>
@@ -139,8 +142,9 @@ export default function Banner() {
                                 <Image
                                     src="https://i.pravatar.cc/80?img=44"
                                     alt="Dr. Nadia"
-                                    fill
-                                    className="object-cover"
+                                    width={40}
+                                    height={40}
+                                    className="object-cover w-10 h-10"
                                 />
                             </div>
                             <div>
