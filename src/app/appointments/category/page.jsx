@@ -18,7 +18,7 @@ const categories = [
   {
     specialty: "Cardiologist",
     icon: <FaHeartbeat size={28} />,
-    description: "Heart & cardiovascular care",
+    description: "Cardiovascular care",
     color: "#e63946",
     bg: "#fff0f0",
     tab: "#ffd6d6",
@@ -34,7 +34,7 @@ const categories = [
   {
     specialty: "Orthopedic",
     icon: <FaBone size={28} />,
-    description: "Bones, joints & muscles",
+    description: "Bones & muscles",
     color: "#f4a261",
     bg: "#fff8f0",
     tab: "#ffe5cc",

@@ -14,9 +14,9 @@ export default function GoogleLogin() {
       {
         onSuccess: (data) => {
           
-          console.log(data);
-          toast.success("Google Login Success");
+          
           router.push("/");
+          toast.success("Google Login Success");
         },
         onError: (error) => {
           toast.error("Google Login Failed");

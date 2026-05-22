@@ -59,7 +59,7 @@ export default function DashboardPage() {
       const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/appointments/${id}`, { method: "DELETE" });
       if (!res.ok) throw new Error();
       setAppointments((prev) => prev.filter((a) => a._id !== id));
-      toast.success("Appointment deleted successfully!");
+      toast.error("Appointment has been deleted!");
     } catch {
       toast.error("Failed to delete appointment.");
     }
@@ -326,61 +326,61 @@ export default function DashboardPage() {
         </div>
       </div>
  
-      {/* ── Update Appointment Modal ── */}
-      {editAppt && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center px-4 bg-black/50 backdrop-blur-sm">
-          <div className="bg-white rounded-3xl shadow-2xl border border-[#E5E7EB] w-full max-w-md p-8 relative">
-            <button onClick={() => setEditAppt(null)} className="absolute top-5 right-5 w-8 h-8 flex items-center justify-center rounded-xl text-[#78716C] hover:bg-[#EDE9FE] hover:text-[#7C3AED] transition-all">
-              <FaXmark size={16} />
-            </button>
-            <div className="mb-6">
-              <div className="inline-flex items-center gap-2 bg-[#EDE9FE] text-[#7C3AED] text-xs font-semibold px-3 py-1 rounded-full mb-3">
-                ✦ Update Appointment
-              </div>
-              <h2 className="text-xl font-bold text-[#1C1917]">{editAppt.doctorName}</h2>
-              <p className="text-sm text-[#78716C]">{editAppt.doctorSpecialty}</p>
-            </div>
-            <form onSubmit={handleUpdate} className="flex flex-col gap-4">
-              {/* Doctor name (read-only) */}
-              <div className="flex flex-col gap-1.5">
-                <label className="text-sm font-semibold text-[#1C1917]">Doctor (read-only)</label>
-                <input readOnly value={editAppt.doctorName} className="w-full px-4 py-2.5 rounded-xl border border-[#E5E7EB] text-sm text-[#78716C] bg-[#FAFAFA] cursor-not-allowed" />
-              </div>
-              {/* Email (read-only) */}
-              <div className="flex flex-col gap-1.5">
-                <label className="text-sm font-semibold text-[#1C1917]">Email (read-only)</label>
-                <input readOnly value={user?.email || ""} className="w-full px-4 py-2.5 rounded-xl border border-[#E5E7EB] text-sm text-[#78716C] bg-[#FAFAFA] cursor-not-allowed" />
-              </div>
-              {/* Editable fields */}
-              {[
-                { key: "patientName", label: "Patient Name", type: "text" },
-                { key: "phone", label: "Phone Number", type: "tel" },
-                { key: "appointmentDate", label: "Appointment Date", type: "date" },
-              ].map(({ key, label, type }) => (
-                <div key={key} className="flex flex-col gap-1.5">
-                  <label className="text-sm font-semibold text-[#1C1917]">{label}</label>
-                  <input
-                    type={type}
-                    value={editForm[key] || ""}
-                    onChange={(e) => setEditForm({ ...editForm, [key]: e.target.value })}
-                    required
-                    className="w-full px-4 py-2.5 rounded-xl border border-[#E5E7EB] text-sm text-[#1C1917] focus:outline-none focus:border-[#7C3AED] focus:ring-2 focus:ring-[#EDE9FE] transition-all"
-                  />
-                </div>
-              ))}
-              <div className="flex flex-col gap-1.5">
-                <label className="text-sm font-semibold text-[#1C1917]">Gender</label>
-                <select value={editForm.gender || "Male"} onChange={(e) => setEditForm({ ...editForm, gender: e.target.value })} className="w-full px-4 py-2.5 rounded-xl border border-[#E5E7EB] text-sm text-[#1C1917] focus:outline-none focus:border-[#7C3AED] focus:ring-2 focus:ring-[#EDE9FE] transition-all bg-white">
-                  <option>Male</option><option>Female</option><option>Other</option>
-                </select>
-              </div>
-              <button type="submit" disabled={updating} className="w-full py-3 bg-[#7C3AED] hover:bg-[#5B21B6] text-white font-bold rounded-xl transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-60">
-                {updating ? <span className="loading loading-spinner loading-sm" /> : "Save Changes →"}
-              </button>
-            </form>
-          </div>
+{/* ── Update Appointment Modal ── */}
+{editAppt && (
+  <div className="fixed inset-0 z-50 flex items-center justify-center px-4 bg-black/50 backdrop-blur-sm">
+    <div className="bg-white rounded-3xl shadow-2xl border border-[#E5E7EB] w-full max-w-md p-6 sm:p-8 relative max-h-[90vh] overflow-y-auto">
+      <button onClick={() => setEditAppt(null)} className="absolute top-5 right-5 w-8 h-8 flex items-center justify-center rounded-xl text-[#78716C] hover:bg-[#EDE9FE] hover:text-[#7C3AED] transition-all">
+        <FaXmark size={16} />
+      </button>
+      <div className="mb-5">
+        <div className="inline-flex items-center gap-2 bg-[#EDE9FE] text-[#7C3AED] text-xs font-semibold px-3 py-1 rounded-full mb-3">
+          ✦ Update Appointment
         </div>
-      )}
+        <h2 className="text-xl font-bold text-[#1C1917]">{editAppt.doctorName}</h2>
+        <p className="text-sm text-[#78716C]">{editAppt.doctorSpecialty}</p>
+      </div>
+      <form onSubmit={handleUpdate} className="flex flex-col gap-3">
+        {/* Doctor name (read-only) */}
+        <div className="flex flex-col gap-1.5">
+          <label className="text-sm font-semibold text-[#1C1917]">Doctor (read-only)</label>
+          <input readOnly value={editAppt.doctorName} className="w-full px-4 py-2.5 rounded-xl border border-[#E5E7EB] text-sm text-[#78716C] bg-[#FAFAFA] cursor-not-allowed" />
+        </div>
+        {/* Email (read-only) */}
+        <div className="flex flex-col gap-1.5">
+          <label className="text-sm font-semibold text-[#1C1917]">Email (read-only)</label>
+          <input readOnly value={user?.email || ""} className="w-full px-4 py-2.5 rounded-xl border border-[#E5E7EB] text-sm text-[#78716C] bg-[#FAFAFA] cursor-not-allowed" />
+        </div>
+        {/* Editable fields */}
+        {[
+          { key: "patientName", label: "Patient Name", type: "text" },
+          { key: "phone", label: "Phone Number", type: "tel" },
+          { key: "appointmentDate", label: "Appointment Date", type: "date" },
+        ].map(({ key, label, type }) => (
+          <div key={key} className="flex flex-col gap-1.5">
+            <label className="text-sm font-semibold text-[#1C1917]">{label}</label>
+            <input
+              type={type}
+              value={editForm[key] || ""}
+              onChange={(e) => setEditForm({ ...editForm, [key]: e.target.value })}
+              required
+              className="w-full px-4 py-2.5 rounded-xl border border-[#E5E7EB] text-sm text-[#1C1917] focus:outline-none focus:border-[#7C3AED] focus:ring-2 focus:ring-[#EDE9FE] transition-all"
+            />
+          </div>
+        ))}
+        <div className="flex flex-col gap-1.5">
+          <label className="text-sm font-semibold text-[#1C1917]">Gender</label>
+          <select value={editForm.gender || "Male"} onChange={(e) => setEditForm({ ...editForm, gender: e.target.value })} className="w-full px-4 py-2.5 rounded-xl border border-[#E5E7EB] text-sm text-[#1C1917] focus:outline-none focus:border-[#7C3AED] focus:ring-2 focus:ring-[#EDE9FE] transition-all bg-white">
+            <option>Male</option><option>Female</option><option>Other</option>
+          </select>
+        </div>
+        <button type="submit" disabled={updating} className="w-full py-3 bg-[#7C3AED] hover:bg-[#5B21B6] text-white font-bold rounded-xl transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-60 sticky bottom-0">
+          {updating ? <span className="loading loading-spinner loading-sm" /> : "Save Changes →"}
+        </button>
+      </form>
+    </div>
+  </div>
+)}
  
       {/* ── Update Profile Modal ── */}
       {profileModalOpen && (
